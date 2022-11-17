@@ -1,0 +1,221 @@
+@import "variables";
+
+header {
+    background-color: $colorFondo;
+    text-align: center;
+    grid-area: header;
+  }
+  
+  /* BOOTSTRAP para el logo del encabezado */
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Flex para la barra de navegación */
+  
+  .menuFlex {
+    display: flex;
+    background-color: $colorFondo;
+    flex-flow: column wrap;
+    justify-content: center;
+    grid-area: menuFlex;
+  }
+  
+  li {
+    list-style-type: none;
+    font-size: $size-standar;
+  
+    &:hover {
+      font-size: $size-standar + 30px;
+      color: white;
+    }
+  }
+  
+  .fotosFlex {
+    display: flex;
+    background-color: rgb(185, 44, 44);
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  
+  .menu {
+    /* margin: auto; */
+    border: 10px lightblue outset;
+    padding: 3px;
+    border-radius: 4px;
+    font-family: Verdana;
+    font-size: $size-standar;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+  }
+  
+  @keyframes animacion {
+    0% {
+      color: blue;
+    }
+  
+    25% {
+      color: rgb(0, 106, 255);
+    }
+  
+    50% {
+      color: rgb(0, 200, 255);
+    }
+  
+    75% {
+      color: rgb(0, 106, 255);
+    }
+  
+    100% {
+      color: blue;
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    color: rgb(128, 7, 7);
+    margin: auto;
+  }
+  
+  .subtitulo {
+    color: bisque;
+    font-size: $size-standar;
+    text-align: center;
+    grid-area: subtitulo;
+    animation-name: animacion;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+  }
+  
+  .parrafo {
+    text-align: center;
+    font-size: $size-standar -10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .parrafoIndex {
+    grid-area: parrafo;
+  }
+  
+  .footer {
+    text-align: center;
+    font-size: $size-standar -20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .historia {
+    background-color: rgb(185, 44, 44);
+    grid-area: historia;
+  }
+  
+  .fotosIndex {
+    justify-content: center;
+    grid-area: fotos;
+    background-color: rgb(185, 44, 44);
+  }
+  
+  .subtituloComidas {
+    text-align: center;
+    background-color: rgb(185, 44, 44);
+    grid-area: subtituloComidas;
+  }
+  
+  .fotosComidas {
+    justify-content: center;
+    background-color: rgb(185, 44, 44);
+    grid-area: historia;
+    display: flex;
+    flex-flow: column;
+  }
+  
+  .listaComidas {
+    background-color: rgb(185, 44, 44);
+    grid-area: listaComidas;
+  }
+  
+  footer {
+    background-color: $colorFondo;
+    grid-area: footer;
+  }
+  
+  img {
+    width: 200px;
+  }
+  
+  /* Display Mobile */
+  /* GRID INDEX */
+  
+  .gridIndex {
+    display: grid;
+    text-align: center;
+    grid-template-areas: "header header" "menuFlex menuFlex" "subtitulo subtitulo" "historia historia" "fotos fotos" "footer footer";
+  }
+  
+  /* GRID COMIDAS */
+  
+  .gridComidas {
+    display: grid;
+    text-align: center;
+    grid-template-areas: "header header" "menuFlex menuFlex" "subtituloComidas subtituloComidas" "listaComidas historia" "footer footer";
+  }
+  
+  /* Display Tablet */
+  /* GRID INDEX */
+  @media (min-width: 768px) {
+    .gridIndex {
+      display: grid;
+      text-align: center;
+      grid-template-areas: "header header" "menuFlex menuFlex" "subtitulo subtitulo" "historia historia" "fotos fotos" "footer footer";
+    }
+  
+    .menuFlex {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+  
+  /* GRID COMIDAS */
+  @media (min-width: 768px) {
+    .gridComidas {
+      text-align: center;
+      grid-template-areas: "header header" "menuFlex menuFlex" "subtituloComidas subtituloComidas" "listaComidas listaComidas" "historia historia" "fotosComidas fotosComidas" "footer footer";
+    }
+  
+    .fotosComidas {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+  
+  /* Version DEsktop */
+  
+  @media (min-width: 1024px) {
+    .gridIndex {
+      display: grid;
+      text-align: center;
+      grid-template-areas: "header header" "menuFlex menuFlex" "subtitulo subtitulo" "historia historia" "fotos fotos" "footer footer";
+    }
+  
+    .menuFlex {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  
+    .footer {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+    }
+  
+    .redes {
+      display: none;
+    }
+  }
